@@ -33,8 +33,10 @@
 
   <div class="field">
     <%= form.label :category_id %>
+    <%= form.text_field :category_id %>
     <%= form.collection_select :category_id, Category.all, :id, :name, prompt: :true %>
-  <div class="actions">
+
+  <div class="actions waves-effect waves-light btn">
     <%= form.submit %>
   </div>
 <% end %>
