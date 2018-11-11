@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_10_184536) do
+ActiveRecord::Schema.define(version: 2018_11_11_214030) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_11_10_184536) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "likes", null: false
     t.index ["category_id"], name: "index_books_on_category_id"
   end
 
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_11_10_184536) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "likes", null: false
   end
 
   add_foreign_key "books", "categories"
