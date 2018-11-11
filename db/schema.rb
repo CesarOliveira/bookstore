@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_11_11_214030) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "likes", default: 0, null: false
     t.index ["category_id"], name: "index_books_on_category_id"
   end
 

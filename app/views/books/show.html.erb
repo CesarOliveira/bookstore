@@ -25,5 +25,14 @@
   <%= @book.category_name %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) , class: 'waves-effect waves-light btn' %> 
+<p>
+  <strong>Likes:</strong>
+  <%= @book.likes %>
+</p>
+
+<p>
+  <%= link_to 'Like +', controller: :books, action: :like, id: @book.id %> 
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book), class: 'waves-effect waves-light btn' %> 
 <%= link_to 'Back', books_path, class: 'waves-effect waves-light btn' %>

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'main#index'
-  resources :books
   resources :categories
+
+  resources :books do
+    get :like, on: :member
+  end
 end

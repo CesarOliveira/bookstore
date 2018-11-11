@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  include LikeHelper
+
+  before_action :set_book, only: [:show, :edit, :update, :destroy, :like]
 
   def index
     @books = Book.all
@@ -19,6 +21,11 @@ class BooksController < ApplicationController
 
   def destroy
     destroy_model(@book, books_url)
+  end
+
+  def like
+    like_book(@book)
+    render :show, status: :ok
   end
 
   private
