@@ -24,8 +24,15 @@ class BooksController < ApplicationController
   end
 
   def like
-    like_book(@book)
-    render :show, status: :ok
+    respond_to do |format|
+      if like_book(@book)
+        format.html { redirect_to @book, notice: "Book was successfully updated." }
+        format.json { render :show, status: :ok, location: @book }
+      else
+        format.html { render :edit }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
