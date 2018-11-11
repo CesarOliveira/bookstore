@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    create_model(Book, category_params)
+    create_model(Book, book_params)
   end
 
   def update
