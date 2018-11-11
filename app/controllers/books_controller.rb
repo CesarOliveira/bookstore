@@ -5,6 +5,10 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
+  def new
+    @book = Book.new
+  end
+
   def create
     create_model(Book, category_params)
   end
