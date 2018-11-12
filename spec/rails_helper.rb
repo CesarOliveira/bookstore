@@ -30,4 +30,3 @@ Shoulda::Matchers.configure do |shoulda|
     with.library :rails
   end
 end
-

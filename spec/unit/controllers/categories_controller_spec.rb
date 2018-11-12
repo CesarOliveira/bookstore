@@ -30,8 +30,8 @@ RSpec.describe CategoriesController, type: :controller do
 
     context 'with existent category' do
       let!(:category) { create(:category) }
-      let(:category_params) do 
-        { id: category.id } 
+      let(:category_params) do
+        { id: category.id }
       end
 
       before do
@@ -61,7 +61,7 @@ RSpec.describe CategoriesController, type: :controller do
       end
 
       it 'returns status not_found' do
-          is_expected.to have_http_status(:not_found)
+        is_expected.to have_http_status(:not_found)
       end
     end
   end
@@ -74,10 +74,10 @@ RSpec.describe CategoriesController, type: :controller do
     context 'with valid parameters' do
       let(:category_params) do
         {
-          category: 
+          category:
             {
               name: Faker::Book.genre,
-              description: Faker::Lorem.sentence(5)    
+              description: Faker::Lorem.sentence(5)
             }
         }
       end
@@ -93,7 +93,7 @@ RSpec.describe CategoriesController, type: :controller do
 
     context 'with invalid parameters' do
       it 'raises an Parameter Missing exception' do
-        expect{ post(:create, {}) }.to raise_error ActionController::ParameterMissing
+        expect { post(:create, {}) }.to raise_error ActionController::ParameterMissing
       end
     end
   end
