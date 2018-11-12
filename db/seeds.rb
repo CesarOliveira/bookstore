@@ -1,7 +1,54 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts 'Seeding database...'
+
+puts 'Creating Category Seeds...'
+
+category_one = Category.create(
+  name: Faker::Book.genre,
+  description: Faker::Lorem.sentence(3),
+  likes: Faker::Number.number(3)
+)
+
+category_two = Category.create(
+  name: Faker::Book.genre,
+  description: Faker::Lorem.sentence(3),
+  likes: Faker::Number.number(3)
+)
+
+
+category_three = Category.create(
+  name: Faker::Book.genre,
+  description: Faker::Lorem.sentence(3),
+  likes: Faker::Number.number(3)
+)
+
+puts 'Creating Books Seeds...'
+
+5.times do
+	Book.create(
+    name: Faker::Book.title,
+    description: Faker::Lorem.sentence(3),
+    author: Faker::Book.author,
+    likes: Faker::Number.number(3),
+    category: category_one
+	)
+end
+
+5.times do
+	Book.create(
+    name: Faker::Book.title,
+    description: Faker::Lorem.sentence(3),
+    author: Faker::Book.author,
+    likes: Faker::Number.number(3),
+    category: category_two
+	)
+end
+
+5.times do
+	Book.create(
+    name: Faker::Book.title,
+    description: Faker::Lorem.sentence(3),
+    author: Faker::Book.author,
+    likes: Faker::Number.number(3),
+    category: category_three
+	)
+end
