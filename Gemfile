@@ -20,6 +20,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development do
@@ -33,6 +34,10 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'json_matchers'
+  gem 'rspec-collection_matchers'
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
