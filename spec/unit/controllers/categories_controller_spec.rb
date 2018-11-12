@@ -82,11 +82,11 @@ RSpec.describe CategoriesController, type: :controller do
         }
       end
 
-      it 'returns status ok' do
+      xit 'returns status ok' do
         # is_expected.to have_http_status(:ok)
       end
 
-      it 'matches the json schema' do
+      xit 'matches the json schema' do
         # is_expected.to match_response_schema('categories/show')
       end
     end
