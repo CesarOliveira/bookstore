@@ -65,4 +65,36 @@ RSpec.describe CategoriesController, type: :controller do
       end
     end
   end
+
+  describe 'POST #create' do
+    subject do
+      post :create, params: category_params
+    end
+
+    context 'with valid parameters' do
+      let(:category_params) do
+        {
+          category: 
+            {
+              name: Faker::Book.genre,
+              description: Faker::Lorem.sentence(5)    
+            }
+        }
+      end
+
+      it 'returns status ok' do
+        # is_expected.to have_http_status(:ok)
+      end
+
+      it 'matches the json schema' do
+        # is_expected.to match_response_schema('categories/show')
+      end
+    end
+
+    context 'with invalid parameters' do
+      it 'raises an Parameter Missing exception' do
+        expect{ post(:create, {}) }.to raise_error ActionController::ParameterMissing
+      end
+    end
+  end
 end
