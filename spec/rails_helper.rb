@@ -32,8 +32,9 @@ Shoulda::Matchers.configure do |shoulda|
 end
 
 SimpleCov.start do
-  add_group 'Consumers', 'app/consumers'
-  add_group 'Domains', 'app/domains'
-  add_group 'Repositories', 'app/repositories'
+  add_group 'Workers', 'app/channels'
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Workers', 'app/jobs'
+  add_group 'Mailers', 'app/mailers'
   add_group 'Models', 'app/models'
 end
