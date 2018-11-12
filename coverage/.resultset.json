@@ -1,0 +1,26 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/cesar/Sites/diversos/ruby/bookstore/app/models/category.rb": [
+        1,
+        null
+      ],
+      "/Users/cesar/Sites/diversos/ruby/bookstore/app/models/abstract_model.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/cesar/Sites/diversos/ruby/bookstore/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1541985277
+  }
+}

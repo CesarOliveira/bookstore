@@ -20,3 +20,17 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 end
+
+Shoulda::Matchers.configure do |shoulda|
+  shoulda.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
+SimpleCov.start do
+  add_group 'Consumers', 'app/consumers'
+  add_group 'Domains', 'app/domains'
+  add_group 'Repositories', 'app/repositories'
+  add_group 'Models', 'app/models'
+end

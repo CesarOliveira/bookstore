@@ -5,15 +5,6 @@ require 'simplecov'
 
 JsonMatchers.schema_root = 'spec/fixtures/schemas'
 
-SimpleCov.start do
-  add_group 'Workers', 'app/channels'
-  add_group 'Controllers', 'app/controllers'
-  add_group 'Workers', 'app/jobs'
-  add_group 'Mailers', 'app/mailers'
-  add_group 'Models', 'app/models'
-  add_group 'Helpers', 'app/helpers'
-end
-
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
