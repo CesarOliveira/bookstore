@@ -24,7 +24,9 @@ class CategoriesController < ApplicationController
   private
 
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.find_by(id: params[:id])
+
+      head :not_found unless @category
     end
 
     def category_params

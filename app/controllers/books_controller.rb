@@ -38,7 +38,9 @@ class BooksController < ApplicationController
   private
 
     def set_book
-      @book = Book.find(params[:id])
+      @book = Book.find_by(id: params[:id])
+
+      head :not_found unless @book
     end
 
     def book_params
