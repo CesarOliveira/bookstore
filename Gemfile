@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'materialize-sass', '~> 1.0.0'
 gem 'rubycritic', require: false
+gem 'rubocop'
 
 group :development, :test do
   gem 'dotenv-rails'
