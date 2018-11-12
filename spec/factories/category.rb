@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
-    name Faker::Name.name
+    name Faker::Book.genre
     description Faker::Dog.breed
   end
 end
