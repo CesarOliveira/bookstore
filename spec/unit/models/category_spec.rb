@@ -10,12 +10,12 @@ RSpec.describe Category, type: :model do
   end
 
   describe '#increase_like' do
-  	let(:likes) { Faker::Number.number(3).to_i }
+    let(:likes) { Faker::Number.number(3).to_i }
     let!(:category) { create(:category, likes: likes) }
 
     subject do
-    	category.increase_like 
-    	category.likes
+      category.increase_like
+      category.likes
     end
 
     it 'should increase the amount of likes' do

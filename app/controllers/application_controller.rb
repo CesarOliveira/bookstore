@@ -1,3 +1,3 @@
 class ApplicationController < ActionController::Base
-	include RenderHelper
+  include RenderHelper
 end

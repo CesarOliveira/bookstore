@@ -26,7 +26,7 @@ class BooksController < ApplicationController
   def like
     respond_to do |format|
       if like_book(@book)
-        format.html { redirect_to @book, notice: "Book was successfully updated." }
+        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
@@ -40,7 +40,6 @@ class BooksController < ApplicationController
     def set_book
       @book = Book.find(params[:id])
     end
-
 
     def book_params
       params.require(:book).permit(:name, :description, :author, :price, :category_id)

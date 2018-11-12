@@ -11,19 +11,19 @@ RSpec.describe Book, type: :model do
     end
   end
 
-	describe 'relationships' do
+  describe 'relationships' do
     it do
       is_expected.to belong_to(:category)
     end
   end
 
   describe '#increase_like' do
-  	let(:likes) { Faker::Number.number(3).to_i }
+    let(:likes) { Faker::Number.number(3).to_i }
     let!(:book) { create(:book, likes: likes) }
 
     subject do
-    	book.increase_like 
-    	book.likes
+      book.increase_like
+      book.likes
     end
 
     it 'should increase the amount of likes' do
